@@ -1,8 +1,8 @@
 # Bottom Sheet
 A responsive bottom sheet for react applications. This bottom sheet will morph into a more standard modal appearance when the screen size is above that of a typical mobile device
 
-<video src="https://github.com/user-attachments/assets/282a6ad0-103d-43a8-9ecb-7ae80eb9e941" height="auto" width="auto"></video>
-<video src="https://github.com/user-attachments/assets/7e5a6b0a-4a98-47fb-b9ca-70282e9e4880" height="auto" width="auto"></video>
+<video title="Mobile Demo" src="https://github.com/user-attachments/assets/282a6ad0-103d-43a8-9ecb-7ae80eb9e941" height="auto" width="auto"></video>
+<video title="Desktop Demo" src="https://github.com/user-attachments/assets/7e5a6b0a-4a98-47fb-b9ca-70282e9e4880" height="auto" width="auto"></video>
 
 ## Installation
 ```bash
