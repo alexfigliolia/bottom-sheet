@@ -3,6 +3,14 @@ A responsive bottom sheet for react applications. This bottom sheet will morph i
 
 ![Poster Demo](media/demo.gif "Demo")
 
+https://github.com/user-attachments/assets/282a6ad0-103d-43a8-9ecb-7ae80eb9e941
+
+
+
+https://github.com/user-attachments/assets/7e5a6b0a-4a98-47fb-b9ca-70282e9e4880
+
+
+
 ## Installation
 ```bash
 npm i @figliolia/bottom-sheet
