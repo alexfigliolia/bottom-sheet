@@ -460,10 +460,10 @@
   resolved "https://registry.yarnpkg.com/@figliolia/classnames/-/classnames-1.0.1.tgz#cb3b6ead371f8c4b2550351165c9fcd256f7b817"
   integrity sha512-C0v417+15L2yVMsrbY8UjcglbQiJBdmofKTxNKDNgTRMDVdG5NKMxPSq1FTcPkUPNH2uFpK1P1bv+3yf4EgbXw==
 
-"@figliolia/drag-detector@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@figliolia/drag-detector/-/drag-detector-1.0.2.tgz#ff099b2d10caf3ba02ec455978f869df9647d54c"
-  integrity sha512-qFSd7afwB+852YSEEMBoCHe0tZBGPnkSTANgdRrzkyvQ0OMPv7dN2h/0ir298TA+QYILdEDLzaJ7PglX7/jKfw==
+"@figliolia/drag-detector@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@figliolia/drag-detector/-/drag-detector-1.0.3.tgz#5d41bb91360a3f9e3e99a94a241e0fb5b5d1f8dd"
+  integrity sha512-OmknjWCMJ/iO6aHiUg+Y5HnM1vMsA2xsT6EKHh2cYIZC2Znsc5kQ3vN79f3y6/T/UaQwaQ2Uyqm9w54+/BKhvw==
   dependencies:
     "@figliolia/react-hooks" "^1.0.3"
 
