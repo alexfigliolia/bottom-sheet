@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@figliolia/child-process": "^1.0.1",
-    "@figliolia/ts-packager": "^1.0.9",
+    "@figliolia/ts-packager": "^1.2.1",
     "@types/jest": "^29.5.10",
     "@types/node": "^20.11.19",
     "@types/react": "^18.3.3",
