@@ -34,6 +34,7 @@ export const BottomSheet = memo(
       children,
       dim = false,
       notch = false,
+      clickOutside = true,
     }: IBottomSheetProps,
     forwardRef: ForwardedRef<ISheetController>,
   ) {
@@ -62,11 +63,20 @@ export const BottomSheet = memo(
       [close, timeout, threshold],
     );
     const dragDetector = useDragDetector<HTMLDivElement>(DDOptions);
-    const sheetContent = useClickOutside<HTMLDivElement>(open, () => {
-      if (!dragging) {
-        close();
-      }
-    }) as MutableRefObject<HTMLDivElement>;
+
+    const enableClickOutside = useMemo(
+      () => (!clickOutside ? false : open),
+      [clickOutside, open],
+    );
+
+    const sheetContent = useClickOutside<HTMLDivElement>(
+      enableClickOutside,
+      () => {
+        if (!dragging) {
+          close();
+        }
+      },
+    ) as MutableRefObject<HTMLDivElement>;
 
     useEffect(() => {
       if (open && scrollView.current) {
@@ -134,6 +144,7 @@ export type IBottomSheetProps = PropsWithChildren<{
   dim?: boolean;
   notch?: boolean;
   className?: string;
+  clickOutside?: boolean;
   close: () => void;
 }>;
 

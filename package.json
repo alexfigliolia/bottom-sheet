@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/bottom-sheet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A responsive bottom sheet UI component for react applications",
   "author": "Alex Figliolia",
   "scripts": {

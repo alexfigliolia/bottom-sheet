@@ -37,5 +37,17 @@ export const BottomSheetForm = ({ open, closeFN }: {
 ```
 You've now created a bottom sheet that'll morph into a modal on larger devices!
 
+## Options
+ 
+| Option  | Default Value | Description |
+| ------------- | ------------- | ------------- |
+| `dim`  | `false`  | Whether to dim the background when the bottom sheet is open |
+| `notch`  | `false`  | Whether to display an `iOS` like swipe indicator on the top of the bottom sheet when viewing on mobile devices |
+| `clickOutside`  | `true`  | Whether clicking outside the bottom sheet will cause it to close |
+| `open`  | `false`  | A trigger to open/close the bottom sheet |
+| `close`  | `undefined`  | A callback to run when the bottom sheet is closed |
+| `className`  | `undefined`  | An optional css class to apply to your bottom sheet |
+| `children`  | `undefined`  | Content elements you wish to render inside your bottom sheet |
+
 ## Browser Support
 This package relies on CSS variables and nesting in order to function. For more detailed information on specific browser version support, please reference the [CSS Variables](https://caniuse.com/css-variables) and [CSS Nesting](https://caniuse.com/?search=css%20nesting) support tables.
