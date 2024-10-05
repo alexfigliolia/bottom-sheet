@@ -1,4 +1,4 @@
-import type { ForwardedRef, MutableRefObject, PropsWithChildren } from "react";
+import type { ForwardedRef, PropsWithChildren } from "react";
 import {
   forwardRef,
   memo,
@@ -76,7 +76,7 @@ export const BottomSheet = memo(
           close();
         }
       },
-    ) as MutableRefObject<HTMLDivElement>;
+    );
 
     useEffect(() => {
       if (open && scrollView.current) {
@@ -97,7 +97,7 @@ export const BottomSheet = memo(
     const cacheNodeReference = useCallback(
       (node: HTMLDivElement) => {
         ref(node);
-        sheetContent.current = node;
+        sheetContent(node);
       },
       [ref, sheetContent],
     );
@@ -110,9 +110,8 @@ export const BottomSheet = memo(
         scrollView,
         dragDetector,
         classNames: classes,
-        sheetContent: sheetContent.current,
       }),
-      [sheetContent, dragDetector, dim, notch, classes],
+      [dragDetector, dim, notch, classes],
     );
 
     return (
@@ -152,7 +151,6 @@ export interface ISheetController {
   dim: boolean;
   notch: boolean;
   classNames: string;
-  sheetContent: HTMLDivElement;
   scrollView: React.RefObject<HTMLDivElement>;
   dragDetector: DragDetector<HTMLDivElement>;
 }
