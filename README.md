@@ -50,4 +50,4 @@ You've now created a bottom sheet that'll morph into a modal on larger devices!
 | `children`  | `undefined`  | Content elements you wish to render inside your bottom sheet |
 
 ## Browser Support
-This package relies on CSS variables and nesting in order to function. For more detailed information on specific browser version support, please reference the [CSS Variables](https://caniuse.com/css-variables) and [CSS Nesting](https://caniuse.com/?search=css%20nesting) support tables.
+This package relies on CSS variables in order to function. For more detailed information on specific browser version support, please reference the [CSS Variables](https://caniuse.com/css-variables) support table.

@@ -20,7 +20,7 @@ import {
   useTimeout,
   useWindowSize,
 } from "@figliolia/react-hooks";
-import "./styles.css";
+import "./styles.scss";
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */

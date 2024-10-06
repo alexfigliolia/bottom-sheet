@@ -27,7 +27,7 @@
     border-top-right-radius: 1em;
     transition: translate 0.5s;
     background-color: var(--background);
-    box-shadow: 0px -5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px -5px 10px rgba(#000, 0.2);
     @media (min-width: 670px) {
       width: 90%;
       max-width: 800px;
@@ -37,7 +37,7 @@
       border-radius: 0.4em;
       translate: 0 -15%;
       transition: translate 0.35s;
-      box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+      box-shadow: 0px 5px 10px rgba(#000, 0.2);
     }
     &>.sheet-scroll-view {
       width: 100%;
