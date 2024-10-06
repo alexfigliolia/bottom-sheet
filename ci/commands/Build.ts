@@ -1,4 +1,4 @@
-import { Builder } from "../build/Builder";
+import { Builder } from "../building/Builder";
 
 (async () => {
   await Builder.build();
