@@ -69,14 +69,17 @@ export const BottomSheet = memo(
       [clickOutside, open],
     );
 
-    const sheetContent = useClickOutside<HTMLDivElement>(
-      enableClickOutside,
-      () => {
-        if (!dragging) {
-          close();
-        }
-      },
-    );
+    const onClickOutside = useCallback(() => {
+      if (!dragging) {
+        close();
+      }
+    }, [dragging, close]);
+
+    const sheetContent = useClickOutside({
+      refCallback: true,
+      open: enableClickOutside,
+      callback: onClickOutside,
+    });
 
     useEffect(() => {
       if (open && scrollView.current) {
