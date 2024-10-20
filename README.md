@@ -49,5 +49,18 @@ You've now created a bottom sheet that'll morph into a modal on larger devices!
 | `className`  | `undefined`  | An optional css class to apply to your bottom sheet |
 | `children`  | `undefined`  | Content elements you wish to render inside your bottom sheet |
 
+## Styling Tips
+There are three CSS custom properties that can be accessed to easily theme your bottom sheets
+
+  --background: #fff;
+  --notch-color: #d0cece;
+  --backdrop-color: #00000082;
+
+| Property  | Default Value | Description |
+| ------------- | ------------- | ------------- |
+| `--background`  | `#fff`  | The color of your sheet |
+| `--notch-color`  | `#d0cece`  | The color of the notch. Visible when `notch={true}` |
+| `--backdrop-color`  | `#00000082`  | The color of the backdrop behind the sheet. Visible when `dim={true}` |
+
 ## Browser Support
 This package relies on CSS Custom Properties in order to function. For more detailed information on specific browser version support, please reference the [CSS Custom Properties](https://caniuse.com/?search=CSS%20custom%20properties) support table.

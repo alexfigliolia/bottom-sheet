@@ -10,12 +10,15 @@
   visibility: hidden;
   z-index: 40;
   opacity: 0;
+  --background: #fff;
+  --notch-color: #d0cece;
+  --backdrop-color: #00000082;
   transition: opacity 0.3s 0.3s, visibility 0s 0.6s;
   @media (min-width: 670px) {
     align-items: center;
   }
   &.dim {
-    background-color: #00000082;
+    background-color: var(--backdrop-color);
   }
   &>.sheet {
     --translate: 100%;
