@@ -1,4 +1,4 @@
-import type { ForwardedRef, PropsWithChildren } from "react";
+import type { ForwardedRef, PropsWithChildren, UIEvent } from "react";
 import {
   forwardRef,
   memo,
@@ -32,6 +32,7 @@ export const BottomSheet = memo(
       close,
       className,
       children,
+      onScroll,
       dim = false,
       notch = false,
       clickOutside = true,
@@ -131,7 +132,10 @@ export const BottomSheet = memo(
             transform: `translateY(${translate}px)`,
             transition: `transform ${translate === 0 && !dragDetector.active ? "0.5s" : "0s"}, translate 0.5s, opacity 0.5s, scale 0.5s`,
           }}>
-          <div ref={scrollView} className="sheet-scroll-view">
+          <div
+            ref={scrollView}
+            onScroll={onScroll}
+            className="sheet-scroll-view">
             <div {...events} className={pullDownClasses} />
             <div className="sheet-content">{children}</div>
           </div>
@@ -148,6 +152,7 @@ export type IBottomSheetProps = PropsWithChildren<{
   className?: string;
   clickOutside?: boolean;
   close: () => void;
+  onScroll?: (e: UIEvent<HTMLElement>) => void;
 }>;
 
 export interface ISheetController {

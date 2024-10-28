@@ -48,6 +48,7 @@ You've now created a bottom sheet that'll morph into a modal on larger devices!
 | `close`  | `undefined`  | A callback to run when the bottom sheet is closed |
 | `className`  | `undefined`  | An optional css class to apply to your bottom sheet |
 | `children`  | `undefined`  | Content elements you wish to render inside your bottom sheet |
+| `onScroll`  | `undefined`  | An optional callback to execute when your bottom sheet is scrolled |
 
 ## Styling Tips
 There are three CSS custom properties that can be accessed to easily theme your bottom sheets

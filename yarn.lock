@@ -474,10 +474,10 @@
   dependencies:
     "@figliolia/size-observer" "^1.0.3"
 
-"@figliolia/react-hooks@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.2.2.tgz#b35a2fecf14f08d5de500ca847a024594069aa2d"
-  integrity sha512-g8KHhEQF4gjI3t8kQOhAld45XixJuldA6nDYZlrR4VAaOMMGXZIPynK5SmE7ZnOa8meX+ayRUiebCxUhxDU2hg==
+"@figliolia/react-hooks@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.2.3.tgz#2eb9866643fe56aea488769af3168cf5203a6415"
+  integrity sha512-1a6+M/QwC0HPzoeMrVyZTMkIZlj+vK19D2nCbAXwWy7EaaPFmFA/LcUolg7Rbt881nAhUogNrOBBdKKLumJc3A==
   dependencies:
     "@figliolia/size-observer" "^1.0.3"
 
