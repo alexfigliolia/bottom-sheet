@@ -46,15 +46,15 @@
       width: 100%;
       padding: 2em 1em 1em;
       overflow-y: auto;
-      max-height: 90svh;
       max-height: 90vh;
+      max-height: 90svh;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
       position: relative;
       @media (min-width: 670px) {
         padding: 1.5em;
-        max-height: 80svh;
         max-height: 80vh;
+        max-height: 80svh;
       }
       &>.pull-down {
         width: 100%;
