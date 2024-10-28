@@ -59,7 +59,7 @@ There are three CSS custom properties that can be accessed to easily theme your 
 
 | Property  | Default Value | Description |
 | ------------- | ------------- | ------------- |
-| `--background`  | `#fff`  | The color of your sheet |
+| `--sheet-background`  | `#fff`  | The color of your sheet |
 | `--notch-color`  | `#d0cece`  | The color of the notch. Visible when `notch={true}` |
 | `--backdrop-color`  | `#00000082`  | The color of the backdrop behind the sheet. Visible when `dim={true}` |
 
