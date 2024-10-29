@@ -460,24 +460,17 @@
   resolved "https://registry.yarnpkg.com/@figliolia/classnames/-/classnames-1.0.1.tgz#cb3b6ead371f8c4b2550351165c9fcd256f7b817"
   integrity sha512-C0v417+15L2yVMsrbY8UjcglbQiJBdmofKTxNKDNgTRMDVdG5NKMxPSq1FTcPkUPNH2uFpK1P1bv+3yf4EgbXw==
 
-"@figliolia/drag-detector@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@figliolia/drag-detector/-/drag-detector-1.0.4.tgz#8e7cd6ca3eb79795aacf165ed94624256554623b"
-  integrity sha512-U3ytaUqPCs4lKVJ1sE1cj7dpIcUy0fx48HOFAPlNma9lMjNHw4oaweQrSCbelTMbAyGZkUh4jKRbEGGcwIcR7w==
+"@figliolia/drag-detector@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@figliolia/drag-detector/-/drag-detector-1.0.6.tgz#022c3e7d1e7ca05fc1db030a475c345a4d63b665"
+  integrity sha512-h1vGT5MS2tbveeiygBWYtjyHq7R32Hhx4DlTGKKZSlLpuNYpkF8qIJbHliBDTViGCUz1H3HamQy/643gcJNqsg==
   dependencies:
-    "@figliolia/react-hooks" "^1.2.0"
+    "@figliolia/react-hooks" "^1.2.4"
 
-"@figliolia/react-hooks@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.2.0.tgz#f0977f02c63a9a68127eb6997468fc425a414b9a"
-  integrity sha512-nAswKKtJLMrThRnpbSVKxjOQzNLgL0HKkVZvYbujxbPWhMYSSmO4bOA4C6bdjrQ2k9q0z3qr7wRkGGgOzGwhJA==
-  dependencies:
-    "@figliolia/size-observer" "^1.0.3"
-
-"@figliolia/react-hooks@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.2.3.tgz#2eb9866643fe56aea488769af3168cf5203a6415"
-  integrity sha512-1a6+M/QwC0HPzoeMrVyZTMkIZlj+vK19D2nCbAXwWy7EaaPFmFA/LcUolg7Rbt881nAhUogNrOBBdKKLumJc3A==
+"@figliolia/react-hooks@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.2.4.tgz#7933790153cdbab5363ea3cda0edfdb74ce8b548"
+  integrity sha512-3RyBv9skGmaa7Zo9+K5tJ6fgYX3Po9m7kB3bHrkdQW7pu7mlYEmTnuirBG0d4K9RtFuKfjOFMFe8s6UTAekLpA==
   dependencies:
     "@figliolia/size-observer" "^1.0.3"
 

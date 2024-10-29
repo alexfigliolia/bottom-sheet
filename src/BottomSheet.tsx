@@ -30,9 +30,9 @@ export const BottomSheet = memo(
     {
       open,
       close,
-      className,
       children,
       onScroll,
+      className,
       dim = false,
       notch = false,
       clickOutside = true,
@@ -89,12 +89,16 @@ export const BottomSheet = memo(
       }
     }, [open]);
 
-    const classes = useClassNames("bottom-sheet", className, {
-      dim,
-      open,
-    });
+    const states = useMemo(
+      () => ({
+        dim,
+        open,
+        notch,
+      }),
+      [dim, open, notch],
+    );
 
-    const pullDownClasses = useClassNames("pull-down", { notch });
+    const classes = useClassNames("bottom-sheet", className, states);
 
     const { ref, ...events } = dragDetector.bindings;
 
@@ -136,7 +140,7 @@ export const BottomSheet = memo(
             ref={scrollView}
             onScroll={onScroll}
             className="sheet-scroll-view">
-            <div {...events} className={pullDownClasses} />
+            <div {...events} className="pull-down" />
             <div className="sheet-content">{children}</div>
           </div>
         </div>
