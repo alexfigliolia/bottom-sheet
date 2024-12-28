@@ -1,4 +1,9 @@
-import type { ForwardedRef, PropsWithChildren, UIEvent } from "react";
+import type {
+  ForwardedRef,
+  MouseEvent,
+  PropsWithChildren,
+  UIEvent,
+} from "react";
 import {
   forwardRef,
   memo,
@@ -15,11 +20,7 @@ import type {
   IDragDetectorOptions,
 } from "@figliolia/drag-detector";
 import { useDragDetector } from "@figliolia/drag-detector";
-import {
-  useClickOutside,
-  useTimeout,
-  useWindowSize,
-} from "@figliolia/react-hooks";
+import { useTimeout, useWindowSize } from "@figliolia/react-hooks";
 import "./styles.scss";
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -41,6 +42,7 @@ export const BottomSheet = memo(
   ) {
     const timeout = useTimeout();
     const { width } = useWindowSize();
+    const container = useRef<HTMLDivElement>(null);
     const scrollView = useRef<HTMLDivElement>(null);
     const [translate, setTranslate] = useState(0);
     const [dragging, setDragging] = useState(false);
@@ -63,24 +65,22 @@ export const BottomSheet = memo(
       }),
       [close, timeout, threshold],
     );
+
     const dragDetector = useDragDetector<HTMLDivElement>(DDOptions);
 
-    const enableClickOutside = useMemo(
-      () => (!clickOutside ? false : open),
-      [clickOutside, open],
+    const onClickOutside = useCallback(
+      (e: MouseEvent<HTMLDivElement>) => {
+        if (
+          open &&
+          clickOutside &&
+          !dragging &&
+          e.target === container.current
+        ) {
+          close();
+        }
+      },
+      [dragging, close, open, clickOutside],
     );
-
-    const onClickOutside = useCallback(() => {
-      if (!dragging) {
-        close();
-      }
-    }, [dragging, close]);
-
-    const sheetContent = useClickOutside({
-      refCallback: true,
-      open: enableClickOutside,
-      callback: onClickOutside,
-    });
 
     useEffect(() => {
       if (open && scrollView.current) {
@@ -102,14 +102,6 @@ export const BottomSheet = memo(
 
     const { ref, ...events } = dragDetector.bindings;
 
-    const cacheNodeReference = useCallback(
-      (node: HTMLDivElement) => {
-        ref(node);
-        sheetContent(node);
-      },
-      [ref, sheetContent],
-    );
-
     useImperativeHandle(
       forwardRef,
       () => ({
@@ -125,13 +117,15 @@ export const BottomSheet = memo(
     return (
       <div
         role="dialog"
+        ref={container}
         aria-modal={true}
         aria-hidden={!open}
-        className={classes}>
+        className={classes}
+        onClick={onClickOutside}>
         <div
+          ref={ref}
           tabIndex={0}
           className="sheet"
-          ref={cacheNodeReference}
           style={{
             transform: `translateY(${translate}px)`,
             transition: `transform ${translate === 0 && !dragDetector.active ? "0.5s" : "0s"}, translate 0.5s, opacity 0.5s, scale 0.5s`,

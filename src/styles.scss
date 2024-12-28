@@ -99,6 +99,7 @@
     &>.sheet {
       --translate: 0;
       translate: 0 var(--translate);
+      outline: none;
       @media (min-width: 670px) {
         opacity: 1;
         translate: 0 0;
