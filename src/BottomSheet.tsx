@@ -1,9 +1,4 @@
-import type {
-  ForwardedRef,
-  MouseEvent,
-  PropsWithChildren,
-  UIEvent,
-} from "react";
+import type { ForwardedRef, MouseEvent } from "react";
 import {
   forwardRef,
   memo,
@@ -14,17 +9,16 @@ import {
   useRef,
   useState,
 } from "react";
+import type { IBottomSheetProps, ISheetController } from "types";
 import { useClassNames } from "@figliolia/classnames";
-import type {
-  DragDetector,
-  IDragDetectorOptions,
-} from "@figliolia/drag-detector";
+import type { IDragDetectorOptions } from "@figliolia/drag-detector";
 import { useDragDetector } from "@figliolia/drag-detector";
 import { useTimeout, useWindowSize } from "@figliolia/react-hooks";
 import "./styles.scss";
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 
 export const BottomSheet = memo(
   forwardRef(function BottomSheet(
@@ -36,7 +30,11 @@ export const BottomSheet = memo(
       className,
       dim = false,
       notch = false,
+      role = "dialog",
       clickOutside = true,
+      focusableContainer = true,
+      "aria-modal": ariaModal = true,
+      ...aria
     }: IBottomSheetProps,
     forwardRef: ForwardedRef<ISheetController>,
   ) {
@@ -116,16 +114,17 @@ export const BottomSheet = memo(
 
     return (
       <div
-        role="dialog"
+        role={role}
         ref={container}
-        aria-modal={true}
         aria-hidden={!open}
         className={classes}
-        onClick={onClickOutside}>
+        aria-modal={ariaModal}
+        onClick={onClickOutside}
+        {...aria}>
         <div
           ref={ref}
-          tabIndex={0}
           className="sheet"
+          tabIndex={focusableContainer ? 0 : undefined}
           style={{
             transform: `translateY(${translate}px)`,
             transition: `transform ${translate === 0 && !dragDetector.active ? "0.5s" : "0s"}, translate 0.5s, opacity 0.5s, scale 0.5s`,
@@ -142,21 +141,3 @@ export const BottomSheet = memo(
     );
   }),
 );
-
-export type IBottomSheetProps = PropsWithChildren<{
-  open: boolean;
-  dim?: boolean;
-  notch?: boolean;
-  className?: string;
-  clickOutside?: boolean;
-  close: () => void;
-  onScroll?: (e: UIEvent<HTMLElement>) => void;
-}>;
-
-export interface ISheetController {
-  dim: boolean;
-  notch: boolean;
-  classNames: string;
-  scrollView: React.RefObject<HTMLDivElement>;
-  dragDetector: DragDetector<HTMLDivElement>;
-}

@@ -49,13 +49,45 @@ You've now created a bottom sheet that'll morph into a modal on larger devices!
 | `className`  | `undefined`  | An optional css class to apply to your bottom sheet |
 | `children`  | `undefined`  | Content elements you wish to render inside your bottom sheet |
 | `onScroll`  | `undefined`  | An optional callback to execute when your bottom sheet is scrolled |
+| `focusableContainer` | `true` | Whether or not the content container of the bottom sheet can be focused. You can disable this when the content inside of your bottom sheet is interactive |
+
+## Accessibility
+By default the bottom sheet uses the `role='dialog'` with `aria-modal='true'`. For bottom sheets that should announce content you can replace the `role` with `alertdialog`.
+
+Bottom sheets that behave like dialogs should have corresponding aria-attributes that identify the label/title as well as descriptive content inside. To accomplish this you can use a combination of `aria-label`, `aria-labelledby`, `aria-description`, or `aria-describedby`
+
+```tsx
+import { useId } from 'react';
+import { BottomSheet } from "@figliolia/bottom-sheet";
+
+export const BottomSheetForm = ({ open, closeFN }: {
+  open: boolean;
+  closeFN: () => void;
+}) => {
+  const title = useId();
+  const description = useId();
+  return (
+    <BottomSheet 
+      dim 
+      notch 
+      open={open}
+      close={closeFN}
+      aria-labelledby={title}
+      aria-describedby={description}
+      className="my-bottom-sheet">
+      <h2 id={title}>Your title / label here</h2>
+      <p id={description}>Your description here</p>
+    </BottomSheet>
+  );
+}
+```
 
 ## Styling Tips
 There are three CSS custom properties that can be accessed to easily theme your bottom sheets
 
-  --background: #fff;
-  --notch-color: #d0cece;
-  --backdrop-color: #00000082;
+  `--background: #fff;`
+  `--notch-color: #d0cece;`
+  `--backdrop-color: #00000082;`
 
 | Property  | Default Value | Description |
 | ------------- | ------------- | ------------- |
