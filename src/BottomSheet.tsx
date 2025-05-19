@@ -124,7 +124,6 @@ export const BottomSheet = memo(
         <div
           ref={ref}
           className="sheet"
-          tabIndex={focusableContainer ? 0 : undefined}
           style={{
             transform: `translateY(${translate}px)`,
             transition: `transform ${translate === 0 && !dragDetector.active ? "0.5s" : "0s"}, translate 0.5s, opacity 0.5s, scale 0.5s`,
@@ -132,7 +131,8 @@ export const BottomSheet = memo(
           <div
             ref={scrollView}
             onScroll={onScroll}
-            className="sheet-scroll-view">
+            className="sheet-scroll-view"
+            tabIndex={focusableContainer ? 0 : undefined}>
             <div {...events} className="pull-down" />
             <div className="sheet-content">{children}</div>
           </div>
