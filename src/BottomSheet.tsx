@@ -92,8 +92,9 @@ export const BottomSheet = memo(
         dim,
         open,
         notch,
+        dragging,
       }),
-      [dim, open, notch],
+      [dim, open, notch, dragging],
     );
 
     const classes = useClassNames("bottom-sheet", className, states);

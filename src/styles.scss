@@ -106,7 +106,9 @@
       }
     }
   }
-  & * {
-    user-select: none;
+  &.dragging {
+    & * {
+      user-select: none;
+    }
   }
 }
