@@ -45,6 +45,7 @@ export const BottomSheet = memo(
     const [translate, setTranslate] = useState(0);
     const [dragging, setDragging] = useState(false);
     const threshold = useMemo(() => (width >= 670 ? 0 : 50), [width]);
+
     const DDOptions: IDragDetectorOptions<HTMLDivElement> = useMemo(
       () => ({
         yThreshold: threshold,

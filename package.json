@@ -1,6 +1,6 @@
 {
   "name": "@figliolia/bottom-sheet",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "A responsive bottom sheet UI component for react applications",
   "author": "Alex Figliolia",
   "scripts": {
@@ -32,12 +32,12 @@
   "dependencies": {
     "@figliolia/classnames": "^1.0.1",
     "@figliolia/drag-detector": "^1.0.7",
-    "@figliolia/react-hooks": "^1.3.0"
+    "@figliolia/react-hooks": "^1.4.0"
   },
   "peerDependencies": {
     "@figliolia/classnames": "^1.0.1",
     "@figliolia/drag-detector": "^1.0.7",
-    "@figliolia/react-hooks": "^1.3.0",
+    "@figliolia/react-hooks": "^1.4.0",
     "react": "^18.3.1"
   },
   "devDependencies": {
