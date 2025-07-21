@@ -450,7 +450,7 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@figliolia/child-process@^1.0.1":
+"@figliolia/child-process@^1.0.1", "@figliolia/child-process@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@figliolia/child-process/-/child-process-1.0.4.tgz#5337c847f43a08ff9e1124793fa650f746515da5"
   integrity sha512-midiGoIu0pO9q+T607iYFSsEFSg6XlWJ7REaGcX/mCuxgrr8hudGSPz4OzyXznVUlp1UwaVTjfgYHlSUxuaJXg==
@@ -460,36 +460,25 @@
   resolved "https://registry.yarnpkg.com/@figliolia/classnames/-/classnames-1.0.1.tgz#cb3b6ead371f8c4b2550351165c9fcd256f7b817"
   integrity sha512-C0v417+15L2yVMsrbY8UjcglbQiJBdmofKTxNKDNgTRMDVdG5NKMxPSq1FTcPkUPNH2uFpK1P1bv+3yf4EgbXw==
 
-"@figliolia/drag-detector@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@figliolia/drag-detector/-/drag-detector-1.0.7.tgz#c51e3f7cfad059ac9fd613ae39365def3d5b7770"
-  integrity sha512-ZaSXLqEujr+fV0guZNsA4S6vhL4qJUbi40mYqluKxIKX0plcNgqk3yCjR6KjwvSzn0OfN8vY2d7VZNMtcDxiag==
+"@figliolia/drag-detector@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@figliolia/drag-detector/-/drag-detector-1.0.8.tgz#8db861d4562b6fe131f39b1664d6ae584088af9e"
+  integrity sha512-qzt0ZvYec7GpPbyGGvp6SDXeqiaD//Vwd6GcDMGyhTZpwhoE4WrRIEvInvIwjCedwWNcAhmKBJXiGxNscabTSQ==
   dependencies:
-    "@figliolia/react-hooks" "^1.2.5"
+    "@figliolia/react-hooks" "^1.7.0"
+    react "^18.0 || ^19"
 
-"@figliolia/react-hooks@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.2.5.tgz#6f89d04817dec76c94e2511e9978c17f1aad77bb"
-  integrity sha512-ueZCXo7z2kg9UgYSJM/Y1qjXjgfm8Wy2AA3WGBV7QhJiJzy8HKjvVw0ecgU70ub3e/MZU9h1GZn4zApGLMqMxw==
+"@figliolia/react-hooks@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.7.0.tgz#491ae713efb36b55ba352a789bcf855e209af6f4"
+  integrity sha512-8b46clZXRwy43ECFe0sbuU4NQNKsL+eepMTYamCaZ4uqN2G5ppZOjgorcsh8wHkJKZtde/OETrH31QFxQqP1aw==
   dependencies:
-    "@figliolia/size-observer" "^1.0.3"
+    "@figliolia/size-observer" "^2.2.0"
 
-"@figliolia/react-hooks@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@figliolia/react-hooks/-/react-hooks-1.5.0.tgz#10e0baadb7a9ae1cd43a9bbaf52cb3260c2a2045"
-  integrity sha512-mBqL4CqGX+5EKrSv4ZpfrUPwBArCC+0T2ptofcfoFNUnVlIK4KcKEx9/9zi5DU/7O78WGko2lKd3QBDj8dQEqQ==
-  dependencies:
-    "@figliolia/size-observer" "^2.1.0"
-
-"@figliolia/size-observer@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@figliolia/size-observer/-/size-observer-1.0.3.tgz#ad2f0fbdc9ab0f874f9bbc9cca981f410b58b7ce"
-  integrity sha512-qB8QrxvBbo8TjTWbxd0kkZ8m29pXCRDsk84hj3IhIky/tzB7B6KVg6AmKyXt4hhHFbz+KGV3DB3NylUNFg8HTA==
-
-"@figliolia/size-observer@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@figliolia/size-observer/-/size-observer-2.1.0.tgz#3f34ba60f9fca129991cab7875e6b130daaa3e98"
-  integrity sha512-59VTKtXoP/SSNHehctcaOLkuSDENojm4cErnChYBuApmhj8Wi0I3Y02/V5duJVfa30Agzzar5KnT/RSgYG+ERQ==
+"@figliolia/size-observer@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@figliolia/size-observer/-/size-observer-2.2.0.tgz#911232272e90d2332783d578402f391649e38082"
+  integrity sha512-xzK57KpnhZfMWO8JRyAyorLoyVGrqUdCnEFeeqa4MK0DBWdUTbO/0P/y3hI3SFmIOAc0aeuuOzPlMJC71m+wFg==
 
 "@figliolia/ts-packager@^1.2.1":
   version "1.2.1"
@@ -3915,6 +3904,11 @@ react-is@^18.0.0:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.3.1.tgz#e83557dc12eae63a99e003a46388b1dcbb44db7e"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
+
+"react@^18.0 || ^19":
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.1.0.tgz#926864b6c48da7627f004795d6cce50e90793b75"
+  integrity sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==
 
 readable-stream@~1.0.31:
   version "1.0.34"

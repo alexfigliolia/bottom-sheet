@@ -73,7 +73,9 @@ export const BottomSheet = memo(
           open &&
           clickOutside &&
           !dragging &&
-          e.target === container.current
+          e.target === container.current &&
+          (typeof window === "undefined" ||
+            !window.getSelection()?.toString?.()?.length)
         ) {
           close();
         }
