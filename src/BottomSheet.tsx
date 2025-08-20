@@ -1,4 +1,4 @@
-import type { ForwardedRef, MouseEvent } from "react";
+import type { ForwardedRef } from "react";
 import {
   forwardRef,
   memo,
@@ -13,12 +13,14 @@ import type { IBottomSheetProps, ISheetController } from "types";
 import { useClassNames } from "@figliolia/classnames";
 import type { IDragDetectorOptions } from "@figliolia/drag-detector";
 import { useDragDetector } from "@figliolia/drag-detector";
-import { useTimeout, useWindowSize } from "@figliolia/react-hooks";
+import {
+  useClickOutside,
+  useMergedRefs,
+  useTimeout,
+  useWindowSize,
+} from "@figliolia/react-hooks";
 import "./styles.scss";
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 
 export const BottomSheet = memo(
   forwardRef(function BottomSheet(
@@ -67,22 +69,6 @@ export const BottomSheet = memo(
 
     const dragDetector = useDragDetector<HTMLDivElement>(DDOptions);
 
-    const onClickOutside = useCallback(
-      (e: MouseEvent<HTMLDivElement>) => {
-        if (
-          open &&
-          clickOutside &&
-          !dragging &&
-          e.target === container.current &&
-          (typeof window === "undefined" ||
-            !window.getSelection()?.toString?.()?.length)
-        ) {
-          close();
-        }
-      },
-      [dragging, close, open, clickOutside],
-    );
-
     useEffect(() => {
       if (open && scrollView.current) {
         scrollView.current.scrollTop = 0;
@@ -102,7 +88,28 @@ export const BottomSheet = memo(
 
     const classes = useClassNames("bottom-sheet", className, states);
 
-    const { ref, ...events } = dragDetector.bindings;
+    const { ref: dragDetectorNodeRef, ...events } = dragDetector.bindings;
+
+    const onClickOutside = useCallback(() => {
+      if (
+        typeof window === "undefined" ||
+        !window.getSelection()?.toString?.()?.length
+      ) {
+        close();
+      }
+    }, [close]);
+
+    const listenForClickOutside = useMemo(
+      () => open && clickOutside && !dragging,
+      [open, clickOutside, dragging],
+    );
+
+    const clickOutsideRef = useClickOutside({
+      open: listenForClickOutside,
+      callback: onClickOutside,
+    });
+
+    const sheetRef = useMergedRefs(clickOutsideRef, dragDetectorNodeRef);
 
     useImperativeHandle(
       forwardRef,
@@ -123,10 +130,9 @@ export const BottomSheet = memo(
         aria-hidden={!open}
         className={classes}
         aria-modal={ariaModal}
-        onClick={onClickOutside}
         {...aria}>
         <div
-          ref={ref}
+          ref={sheetRef}
           className="sheet"
           style={{
             transform: `translateY(${translate}px)`,
