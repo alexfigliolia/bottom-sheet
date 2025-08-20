@@ -10,21 +10,27 @@
   visibility: hidden;
   z-index: 40;
   opacity: 0;
+  --border-radius: 1em;
+  --horizontal-padding: 1em;
+  --notch-width: 4em;
+  --notch-height: 0.25em;
   --sheet-background: #fff;
   --notch-color: #d0cece;
   --backdrop-color: #00000082;
   transition: opacity 0.3s 0.3s, visibility 0s 0.6s;
   @media (min-width: 670px) {
     align-items: center;
+    --horizontal-padding: 1.5em;
+    --border-radius: 0.4em;
   }
-  &>.sheet {
+  & .sheet {
     --translate: 100%;
     width: 100%;
     overflow: hidden;
     translate: 0 var(--translate);
     position: relative;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     transition: translate 0.5s;
     background-color: var(--sheet-background);
     box-shadow: 0px -5px 10px rgba(#000, 0.2);
@@ -34,14 +40,14 @@
       opacity: 0;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      border-radius: 0.4em;
+      border-radius: var(--border-radius);
       translate: 0 -15%;
       transition: translate 0.35s;
       box-shadow: 0px 5px 10px rgba(#000, 0.2);
     }
-    &>.sheet-scroll-view {
+    & .sheet-scroll-view {
       width: 100%;
-      padding: 2em 1em 1em;
+      padding: 2em var(--horizontal-padding) 1em;
       overflow-y: auto;
       max-height: 90vh;
       max-height: 90svh;
@@ -49,15 +55,15 @@
       overscroll-behavior: contain;
       position: relative;
       @media (min-width: 670px) {
-        padding: 1.5em;
+        padding: var(--horizontal-padding);
         max-height: 80vh;
         max-height: 80svh;
       }
-      &>.pull-down,
-      &>.sheet-content {
+      & .pull-down,
+      & .sheet-content {
         width: 100%;
       }
-      &>.pull-down {
+      & .pull-down {
         height: 2em;
         top: 0;
         left: 0;
@@ -76,12 +82,12 @@
   &.dim {
     background-color: var(--backdrop-color);
   }
-  &.notch > .sheet > .sheet-scroll-view > .pull-down:before {
+  &.notch .pull-down:before {
     content: "";
-    width: 4em;
-    height: 0.25em;
+    width: var(--notch-width);
+    height: var(--notch-height);
     display: block;
-    border-radius: 0.25em;
+    border-radius: var(--notch-height);
     background-color: var(--notch-color);
     translate: 0 -2em;
     transition: translate 0.75s 0s; 
@@ -92,11 +98,11 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s 0s, visibility 0s 0s;
-    &.notch > .sheet > .sheet-scroll-view > .pull-down:before {
+    &.notch .pull-down:before {
       translate: 0 0;
       transition: translate 0.75s 0.6s;
     }
-    &>.sheet {
+    & .sheet {
       --translate: 0;
       translate: 0 var(--translate);
       outline: none;

@@ -83,17 +83,17 @@ export const BottomSheetForm = ({ open, closeFN }: {
 ```
 
 ## Styling Tips
-There are three CSS custom properties that can be accessed to easily theme your bottom sheets
-
-  `--background: #fff;`
-  `--notch-color: #d0cece;`
-  `--backdrop-color: #00000082;`
+There are CSS custom properties that can be accessed to easily theme your bottom sheets
 
 | Property  | Default Value | Description |
 | ------------- | ------------- | ------------- |
 | `--sheet-background`  | `#fff`  | The color of your sheet |
 | `--notch-color`  | `#d0cece`  | The color of the notch. Visible when `notch={true}` |
 | `--backdrop-color`  | `#00000082`  | The color of the backdrop behind the sheet. Visible when `dim={true}` |
+| `--border-radius`  | `1em` or `0.4em` when screen width is above `670px`  | The amount of border radius applied to the bottom sheet |
+| `--horizontal-padding`  | `1em` or `1.5em` when screen width is above `670px`  | The amount of horizontal padding applied to the bottom sheet |
+| `--notch-width`  | `4em` | The width of the top notch when `notch={true}` |
+| `--notch-height`  | `0.25em` | The height of the top notch when `notch={true}` |
 
 ## Browser Support
 This package relies on CSS Custom Properties in order to function. For more detailed information on specific browser version support, please reference the [CSS Custom Properties](https://caniuse.com/?search=CSS%20custom%20properties) support table.
